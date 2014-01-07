@@ -1,0 +1,18 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/matthewcampbell/Sites/code/rails-projects/backbone-plm/app/controllers/users_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/matthewcampbell/Sites/code/rails-projects/backbone-plm/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1389120981
+  }
+}
