@@ -7,26 +7,21 @@ $(document).ready(function(){
       var valuesToSubmit = $(this).serialize();
       $.ajax({
         url: $(this).attr('action'), //sumbits it to the given url of the form
-        dataType: "JSON", // you want a difference between normal and ajax-calls, and json is standard
         type: "POST",
+        dataType: "HTML",
         data: valuesToSubmit,
-        success: function(json) {
-          alert(json);
-          // What do I want to do with the JSON that is returned? Pass it into the questionnaire?
+        success: function(data) {
+          // Attach the data HTML to the DOM body
+          $('div.container').prepend(data);
+          $('#myModal').modal('show');
         },
-        // If something went wrong...
+        // If something went wrong... meaning the controller/app doesn't return HTML data type, basically, I think?
         error: function(responseObject) {
-          alert(responseObject.responseText);
+          // TODO: put some real code here...
+          alert("Woops, try again!");
         }
       });
-      // NOTE: This 'return false' may be preventing modal opening...
-      return false; // prevents normal behaviour
-  });
-
-  $('#myModal').modal('hide');
-  $('button[data-target="#myModal"]').click(function() {
-      //$('form').submit();
-      $('#myModal').modal('show');
+      return false; // prevents normal behavior, i.e. AJAX only
   });
 
 });

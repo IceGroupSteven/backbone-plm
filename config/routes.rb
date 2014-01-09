@@ -4,10 +4,10 @@ BackbonePlm::Application.routes.draw do
   resources :sessions
   resources :users
   
-  # get "pages/home"
-  # get "pages/about"
-  # get "pages/contact"
-  # get "pages/terms"
+  get "pages/home"
+  get "pages/about"
+  get "pages/contact"
+  get "pages/terms"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

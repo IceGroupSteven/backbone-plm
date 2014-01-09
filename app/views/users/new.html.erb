@@ -1,51 +1,35 @@
-<div class="container">
+<h1>Sign Up for Backbone PLM</h1>
+
+<%= form_tag('/users', remote: true) do |f| %>
+  <div class="field">
+    <%= label_tag :first_name %><br />
+    <%= text_field_tag :first_name, '', :name => "user[first_name]" %>
+  </div>
   
-  <h1>Sign Up for Backbone PLM</h1>
+  <div class="field">
+    <%= label_tag :last_name %><br />
+    <%= text_field_tag :last_name, '', :name => "user[last_name]" %>
+  </div>
 
-  <%= form_tag('/users', remote: true) do |f| %>
-    <% if @user.errors.any? %>
-      <div class="error_messages">
-        <h2>Form is invalid</h2>
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <div class="field">
+    <%= label_tag :email %><br />
+    <%= email_field_tag :email, '', :name => "user[email]" %>
+  </div>
 
-    <div class="field">
-      <%= label_tag :first_name %><br />
-      <%= text_field_tag :first_name, '', :name => "user[first_name]" %>
-    </div>
-    
-    <div class="field">
-      <%= label_tag :last_name %><br />
-      <%= text_field_tag :last_name, '', :name => "user[last_name]" %>
-    </div>
+  <div class="field">
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password, '', :name => "user[password]" %>
+  </div>
 
-    <div class="field">
-      <%= label_tag :email %><br />
-      <%= email_field_tag :email, '', :name => "user[email]" %>
-    </div>
+  <div class="field">
+    <%= label_tag :password_confirmation %><br />
+    <%= password_field_tag :password_confirmation, '', :name => "user[password_confirmation]" %>
+  </div>
 
-    <div class="field">
-      <%= label_tag :password %><br />
-      <%= password_field_tag :password, '', :name => "user[password]" %>
-    </div>
+  <br>
 
-    <div class="field">
-      <%= label_tag :password_confirmation %><br />
-      <%= password_field_tag :password_confirmation, '', :name => "user[password_confirmation]" %>
-    </div>
-
-    <%= render "questionnaire" %>
-    <br>
-
-    <!-- Button trigger modal -->
-    <button class="btn btn-primary btn-lg" type="submit">
-      Submit
-    </button>
-  <% end %>
-
-</div>
+  <!-- Button trigger modal and submit form -->
+  <button class="btn btn-primary btn-lg" type="submit">
+    Submit
+  </button>
+<% end %>
