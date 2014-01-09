@@ -1,20 +1,20 @@
 development:
   adapter: postgresql
   database: bplm_dev
-  username:
+  username: matthewcampbell
   password: 
   host: localhost
 
 test:
   adapter: postgresql
   database: bplm_test
-  username:
+  username: matthewcampbell
   password: 
   host: localhost
 
 production:
   adapter: postgresql
   database: bplm_prod
-  username:
+  username: matthewcampbell
   password: 
   host: localhost
