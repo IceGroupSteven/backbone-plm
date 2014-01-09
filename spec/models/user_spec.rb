@@ -13,5 +13,13 @@ describe User do
   it "should be invalid without an email address" do
     expect(invalid).to be_invalid
   end
-end
 
+  it "should be invalid without a password confirmation" do
+    expect(build :no_password_confirmation).to be_invalid
+  end
+
+  it "should store an encrypted version of the user's password" do
+    expect(user.password_digest).to eq "testing123"
+    expect(user.password).to eq "testing123"
+  end
+end
