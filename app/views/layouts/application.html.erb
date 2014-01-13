@@ -5,6 +5,22 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  <!-- Chang URLs to wherever Video.js files will be hosted -->
+  <link href="video-js/video-js.css" rel="stylesheet" type="text/css">
+  <!-- video.js must be in the <head> for older IEs to work. -->
+  <script src="video-js/video.js"></script>
+
+  <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+  <script>
+    videojs.options.flash.swf = "video-js/video-js.swf";
+  </script>
+    
   </head>
 
   <body>

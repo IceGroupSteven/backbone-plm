@@ -1,0 +1,71 @@
+/* Fonts */
+/* included only when we don't want to use fonts from google server */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+/* General */
+
+a { color:#fff; }
+a:hover {color:#fff;}
+body {
+  padding-top: 50px;
+  font-family: 'Open Sans';
+}
+
+/* Registration */
+
+.sign-up {
+  padding: 40px 15px;
+}
+
+
+/* Navigation */
+
+.navbar-blue {
+background-color: #0278c8;
+border-color: #080808;
+}
+.navbar-blue .navbar-toggle .icon-bar {
+background-color: #ffffff;
+}
+.navbar-blue .navbar-toggle {
+border-color: #006FB9;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+color: white;
+	background: -webkit-linear-gradient(#71cfed,#3a9cde);
+    background: -moz-linear-gradient(#71cfed,#3a9cde);  
+    background: -o-linear-gradient(#71cfed,#3a9cde);  
+    background: linear-gradient(#71cfed,#3a9cde);  
+    background-color: #71cfed;  
+    -webkit-transition: background 1s ease-out;  
+    -moz-transition: background 1s ease-out;  
+    -o-transition: background 1s ease-out;  
+    transition: background 1s ease-out;  
+}
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+
+
+.lg-space {padding: 20px 0px 20px 0px;}
+.sm-space {padding: 20px 0px 20px 0px;}
+.fm-space {padding: 5px 0px 5px 0px;}
+.form-control {font-size:11px;background:#EBEBEB;}
+.vertical {
+	border-right-width: 1px;
+	border-right-style: dotted;
+	border-right-color: #DDDDDD;
+}
