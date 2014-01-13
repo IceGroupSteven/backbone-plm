@@ -1,0 +1,45 @@
+
+<%= form_tag('/users', remote: true) do |f| %>
+<div class="form-group">
+          <div class="row fm-space">
+  <div class="col-lg-6">
+    <%= text_field_tag :first_name, '', :name => "user[first_name]", :class => 'form-control', :placeholder => 'FIRST NAME' %>
+  </div>
+  <div class="col-lg-6">
+    <%= text_field_tag :last_name, '', :name => "user[last_name]", :class => 'form-control', :placeholder => 'LAST NAME'  %>
+  </div>
+  </div>
+</div>
+
+<div class="form-group">
+          <div class="row fm-space">
+  <div class="col-lg-12">
+    <%= email_field_tag :email, '', :name => "user[email]", :class => 'form-control', :placeholder => 'EMAIL'  %>
+  </div>
+  
+  </div>
+</div>
+
+<div class="form-group">
+          <div class="row fm-space">
+  <div class="col-lg-12">
+    <%= password_field_tag :password, '', :name => "user[password]", :class => 'form-control', :placeholder => 'Password'  %>
+  </div>
+  <div class="col-lg-12">
+    <%= label_tag :password_confirmation %><br />
+    <%= password_field_tag :password_confirmation, '', :name => "user[password_confirmation]" , :class => 'form-control' %>
+  </div>
+  
+  </div>
+</div>
+     <div class="checkbox">
+    <label>
+      <input type="checkbox"> I AGREE TO THE TERMS OF SERVICE
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary btn-lg btn-block">SIGN UP</button>
+       </div>
+      </div>
+<% end %>
+
+

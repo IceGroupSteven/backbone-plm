@@ -1,4 +1,14 @@
 
+
+      <div class="container">
+        <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2"><%= link_to "Login", new_session_path, class: "btn btn-primary btn-lg" %></div>
+          
+        </div>
+      </div>
+
+
 <div class="container">
    <div class="sign-up">
       <div class="row lg-space">
@@ -17,8 +27,7 @@
         </div>
        
         <div class="col-lg-6">
-          <%= link_to "Sign up!", new_user_path, class: "btn btn-primary btn-lg" %>
-          <%= link_to "Login", new_session_path, class: "btn btn-primary btn-lg" %>
+          <%= render "users/new" %>
       </div>
       </div>
 
