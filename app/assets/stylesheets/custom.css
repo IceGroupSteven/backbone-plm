@@ -69,3 +69,8 @@ color: white;
 	border-right-style: dotted;
 	border-right-color: #DDDDDD;
 }
+
+/* Form Links */
+
+.checkbox a {color: #13c3e7;}
+
