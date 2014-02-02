@@ -13,10 +13,9 @@ class UsersController < ApplicationController
       else
         redirect_to @user
       end
-
     else
       # If @user is not valid, the new user form will be rendered with errors
-      render partial: "shared/messages", object: @user, as: 'object'
+      render partial: "users/new", object: @user, as: 'object'
     end
   end
 
