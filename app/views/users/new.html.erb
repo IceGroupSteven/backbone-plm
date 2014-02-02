@@ -1,31 +1,31 @@
-<div class="container-full">
-  <div class="row logo-header">
-    <div class="col-sm-3 col-sm-offset-1">
-      <img src="assets/welcome-logo.png" class="img-responsive" alt="Welcome to Backbone PLM">
-    </div>
+<div class="row logo-header">
+  <div class="col-sm-3 col-sm-offset-1">
+    <img src="assets/welcome-logo.png" class="img-responsive" alt="Welcome to Backbone PLM">
   </div>
+</div>
 
-  <div class="row sign-up-bg">
+<div class="row bg-pattern">
+  <div class="col-sm-12 margin-responsive">
     <div class="row">
       <div class="col-sm-6 col-centered register-form-signup">
         <h1>SIGN UP</h1>
         <h2>IT'S EASY. TRUST US. IT REALLY IS.</h2>
       </div>
-    </div>
+    </div> <!-- End of Header Row -->
 
     <div class="row">
-      <%= render "shared/errors", :object => @user %>
-      <div class="col-sm-6 sign-up col-centered">
+      <div class="col-sm-6 bg-blue col-centered">
+        <%= render "shared/errors", :object => @user %>
         <%= field_set_tag nil do %>
           <%= form_for(@user, remote: true) do |f| %>
 
           <div class="form-group">
             <div class="row">
               <div class="col-sm-6 form-div">
-                <%= text_field :user, :first_name, :class => 'form-control', :placeholder => 'FIRST NAME' %>
+                <%= f.text_field :first_name, :class => 'form-control', :placeholder => 'FIRST NAME' %>
               </div>
               <div class="col-sm-6 form-div">
-                <%= text_field :user, :last_name, :class => 'form-control', :placeholder => 'LAST NAME'  %>
+                <%= f.text_field :last_name, :class => 'form-control', :placeholder => 'LAST NAME'  %>
               </div>
             </div>
           </div>
@@ -33,7 +33,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-sm-12 form-div">
-                <%= email_field :user, :email, :class => 'form-control', :placeholder => 'EMAIL'  %>
+                <%= f.email_field :email, :class => 'form-control', :placeholder => 'EMAIL'  %>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-sm-12 form-div">
-                <%= password_field :user, :password, :class => 'form-control', :placeholder => 'PASSWORD'  %>
+                <input class="email-validation form-control" type="text" placeholder="CONFIRM EMAIL"/>
               </div>
             </div>
           </div>
@@ -49,7 +49,15 @@
           <div class="form-group">
             <div class="row">
               <div class="col-sm-12 form-div">
-              <%= password_field :user, :password_confirmation, :class => 'form-control', :placeholder => 'PASSWORD CONFIRMATION' %>
+                <%= f.password_field :password, :class => 'form-control', :placeholder => 'PASSWORD'  %>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-12 form-div">
+              <%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'PASSWORD CONFIRMATION' %>
               </div>
             </div>
           </div>
@@ -61,10 +69,8 @@
 
           <% end %>
         <% end %>
-      </div>
-    </div>
+      </div> <!-- End of Form Column -->
+    </div>  <!-- End of Form Row -->
+  </div> <!-- End of Sign Up Col-12 container -->
 
-  </div>
-
-</div>
-
+</div> <!-- End of Row containing "Sign Up!" and Form -->
