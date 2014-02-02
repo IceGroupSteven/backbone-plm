@@ -17,7 +17,7 @@ $(document).ready(function(){
         },
         // If something went wrong... meaning the controller/app doesn't return HTML data type, basically, I think?
         error: function(responseObject) {
-          // TODO: put some real code here...
+          // Fires after a response is received, if the response has a 400 or 500 HTTP status code
           alert("Woops, try again!");
         }
       });

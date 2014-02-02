@@ -1,6 +1,8 @@
 <div class="row">
+  <%= render "shared/messages", :object => @user %>
   <div class="col-sm-6 sign-up col-centered">
       <%= form_tag('/users', remote: true) do |f| %>
+
       <div class="form-group">
         <div class="row">
           <div class="col-sm-6 form-div">
@@ -38,7 +40,9 @@
 
       <p class="terms">BY CLICKING SIGN UP, YOU AGREE TO OUR <a href="#">TERMS AND CONDITIONS</a></p>
 
+      <!-- Button trigger modal and submit form -->
       <button type="submit" class="btn btn-sm sign-up-btn">SIGN UP</button>
+
     <% end %>
   </div>
 </div>
