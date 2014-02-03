@@ -17,8 +17,9 @@ $(document).ready(function(){
         },
         // If something went wrong... meaning the controller/app doesn't return HTML data type, basically, I think?
         error: function(responseObject) {
-          // Fires after a response is received, if the response has a 400 or 500 HTTP status code
-          alert("Woops, try again!");
+          // Fires after a failure response is received, i.e. if the response has a 400 or 500 HTTP status code
+          $('.register-form-signup').append(responseObject.responseText);
+          $('.errors').delay(4000).hide('slow');
         }
       });
       return false; // prevents normal behavior, i.e. AJAX only

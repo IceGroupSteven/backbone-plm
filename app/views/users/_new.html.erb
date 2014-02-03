@@ -1,6 +1,7 @@
 <div class="row">
-  <%= render "shared/messages", :object => @user %>
+  <%= render "shared/errors", :object => @user %>
   <div class="col-sm-6 sign-up col-centered">
+    <%= field_set_tag nil, class: 'new_user' do %>
       <%= form_tag('/users', remote: true) do |f| %>
 
       <div class="form-group">
@@ -43,6 +44,7 @@
       <!-- Button trigger modal and submit form -->
       <button type="submit" class="btn btn-sm sign-up-btn">SIGN UP</button>
 
+      <% end %>
     <% end %>
   </div>
 </div>

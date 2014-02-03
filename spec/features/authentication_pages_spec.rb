@@ -1,35 +1,21 @@
 require 'spec_helper'
 
 describe "User authentication" do
-  before :each do
-    build(:user)
-    build(:no_password_confirmation)
-  end
-
-  describe "the signin process", :type => :feature do
-    pending
+  describe "sign-in of existing user" do
     #TODO: implement this test once we have user flow determined
-    # it "signs me in" do
-    #   visit '/sessions/new'
-    #   within("#session") do
-    #     fill_in 'Login', :with => 'user@example.com'
-    #     fill_in 'Password', :with => 'password'
-    #   end
-    #   click_link 'Sign in'
-    #   expect(page).to have_content 'Success'
-    # end
+    pending
   end
 
-  describe "the signup process" do
-    it "renders the signup form with errors with insufficient credentials" do
-      visit '/users/new'
-      within(".sign-up") do
-        fill_in 'First name', with: "Matt"
-        fill_in 'Last name', with: "Campbell"
+  describe "sign-up for new users" do
+    it "renders the sign-up form with errors with insufficient credentials" do
+      visit '/'
+      within(:css, ".new_user") do
+        fill_in 'user[first_name]', with: "Matt"
+        fill_in 'user[last_name]', with: "Campbell"
       end
-      click_link 'SIGN UP'
+      click_button 'SIGN UP'
       expect(page).to_not have_content 'Success'
-      expect(page).to have_content('div.alert.alert-error')
+      expect(page).to have_content(/Email can't be blank Password can't be blank/)
     end
   end
 end
