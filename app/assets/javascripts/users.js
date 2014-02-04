@@ -12,7 +12,7 @@ $(document).ready(function(){
         data: valuesToSubmit,
         success: function(data) {
           // Attach the data HTML to the DOM body
-          $('div.container').prepend(data);
+          $('div.container-full').prepend(data);
           $('#myModal').modal('show');
         },
         // If something went wrong... meaning the controller/app doesn't return HTML data type, basically, I think?
