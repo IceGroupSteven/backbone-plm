@@ -12,6 +12,26 @@
   font-weight: 400;
   src: local('Open Sans'), local('OpenSans'), url(cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
+@font-face {
+  font-family: 'Nexa Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('nexabold.otf') format('otf'),
+       url('nexabold.woff') format('woff'), 
+       url('nexabold.ttf')  format('truetype'),
+       url('nexabold.svg') format('svg'),
+       url('nexabold.eot') format('eot');
+}
+@font-face {
+  font-family: 'Nexa Light';
+  font-style: normal;
+  font-weight: normal;
+  src: url('nexalight.otf') format('otf'),
+       url('nexalight.woff') format('woff'), 
+       url('nexalight.ttf')  format('truetype'),
+       url('nexalight.svg') format('svg'),
+       url('nexabold.eot') format('eot');
+}
 
 /* General */
 
@@ -22,12 +42,84 @@ body {
   font-family: 'Open Sans';
 }
 
-/* Registration */
-
-.sign-up {
-  padding: 40px 15px;
+.col-centered {
+    float: none;
+    margin: 0 auto;
 }
 
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Home Page */
+
+.logo-header {
+  padding-bottom: 15px;
+}
+
+.register-form-signup h1 {
+  color: #1387c3;
+  font-family: "Nexa Bold";
+  letter-spacing: 2px;
+  font-size: 46px;
+}
+
+.register-form-signup h2 {
+  color: #5ca8d4;
+  font-family: "Nexa Light";
+  font-size: 13px;
+  margin-top: 0;
+  line-height: 0;
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+}
+
+.sign-up {
+  padding: 10px 8px;
+  background-color: #64a9d2;
+}
+
+.sign-up-bg {
+  background-image:url('/assets/background.png');
+  background-repeat: repeat;
+}
+
+/* Form Styles */
+
+.form-control {
+  font-family: "Nexa Light";
+  font-size: 16px;
+  padding: 4px;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+/*.form-div {
+
+}*/
+
+.terms {
+  color: #3E7095;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.sign-up-btn {
+  background-color: #ffffff;
+  color: #1387c3;
+  font-family: "Nexa Bold";
+  font-size: 16px;
+  width: 33%;
+}
+
+.vertical {
+  border-right-width: 1px;
+  border-right-style: dotted;
+  border-right-color: #DDDDDD;
+}
 
 /* Navigation */
 
@@ -59,18 +151,9 @@ color: white;
           border-radius: 0 !important;
 }
 
+/* Footer */
 
-.lg-space {padding: 20px 0px 20px 0px;}
-.sm-space {padding: 20px 0px 20px 0px;}
-.fm-space {padding: 5px 0px 5px 0px;}
-.form-control {font-size:11px;background:#EBEBEB;}
-.vertical {
-	border-right-width: 1px;
-	border-right-style: dotted;
-	border-right-color: #DDDDDD;
+.copyright {
+  font: gray;
+  font-size: 10px;
 }
-
-/* Form Links */
-
-.checkbox a {color: #13c3e7;}
-

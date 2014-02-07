@@ -7,24 +7,21 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      
+
       if request.xhr?
         render partial: "questionnaire", object: @user, as: 'user'
       else
-        # TODO: error handling if users created without AJAX form submission
         redirect_to @user
       end
-
     else
       # If @user is not valid, the new user form will be rendered with errors
-      render partial: "layouts/errors", object: @user, as: 'object'
+      render partial: "shared/errors", status: 500, object: @user, as: 'object'
     end
   end
 
   def update
-    # TODO: the 2nd part of new user signup will effectively update our existing, basic user
+    # TODO: the 2nd part of new user sign-up will effectively update our existing, basic user
     @user = User.find_by(session[:user_id])
-    binding.pry
     # flash[:notice] = "Thank you for signing up!"
   end
 

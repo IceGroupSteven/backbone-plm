@@ -12,13 +12,14 @@ $(document).ready(function(){
         data: valuesToSubmit,
         success: function(data) {
           // Attach the data HTML to the DOM body
-          $('div.container').prepend(data);
+          $('div.container-full').prepend(data);
           $('#myModal').modal('show');
         },
         // If something went wrong... meaning the controller/app doesn't return HTML data type, basically, I think?
         error: function(responseObject) {
-          // TODO: put some real code here...
-          alert("Woops, try again!");
+          // Fires after a failure response is received, i.e. if the response has a 400 or 500 HTTP status code
+          $('.register-form-signup').append(responseObject.responseText);
+          $('.errors').delay(4000).hide('slow');
         }
       });
       return false; // prevents normal behavior, i.e. AJAX only
