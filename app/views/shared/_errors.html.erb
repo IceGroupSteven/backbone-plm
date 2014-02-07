@@ -1,0 +1,11 @@
+<% if object.errors.any? %>
+  <div class="errors alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <%= content_tag(:p, "#{pluralize(object.errors.count, 'error')} prevented this record from being saved:") %>
+    <ul>
+    <% object.errors.full_messages.each do |msg| %>
+      <%= content_tag :li, msg %>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
