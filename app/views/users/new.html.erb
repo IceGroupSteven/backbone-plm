@@ -16,16 +16,16 @@
     <div class="row">
       <%= render "shared/errors", :object => @user %>
       <div class="col-sm-6 sign-up col-centered">
-        <%= field_set_tag nil, class: 'new_user' do %>
-          <%= form_tag('/users', remote: true) do |f| %>
+        <%= field_set_tag nil do %>
+          <%= form_for(@user, remote: true) do |f| %>
 
           <div class="form-group">
             <div class="row">
               <div class="col-sm-6 form-div">
-                <%= text_field_tag :first_name, '', :name => "user[first_name]", :class => 'form-control', :placeholder => 'FIRST NAME' %>
+                <%= text_field :user, :first_name, :class => 'form-control', :placeholder => 'FIRST NAME' %>
               </div>
               <div class="col-sm-6 form-div">
-                <%= text_field_tag :last_name, '', :name => "user[last_name]", :class => 'form-control', :placeholder => 'LAST NAME'  %>
+                <%= text_field :user, :last_name, :class => 'form-control', :placeholder => 'LAST NAME'  %>
               </div>
             </div>
           </div>
@@ -33,7 +33,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-sm-12 form-div">
-                <%= email_field_tag :email, '', :name => "user[email]", :class => 'form-control', :placeholder => 'EMAIL'  %>
+                <%= email_field :user, :email, :class => 'form-control', :placeholder => 'EMAIL'  %>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-sm-12 form-div">
-                <%= password_field_tag :password, '', :name => "user[password]", :class => 'form-control', :placeholder => 'PASSWORD'  %>
+                <%= password_field :user, :password, :class => 'form-control', :placeholder => 'PASSWORD'  %>
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-sm-12 form-div">
-              <%= password_field_tag :password_confirmation, '', :name => "user[password_confirmation]" , :class => 'form-control', :placeholder => 'PASSWORD CONFIRMATION' %>
+              <%= password_field :user, :password_confirmation, :class => 'form-control', :placeholder => 'PASSWORD CONFIRMATION' %>
               </div>
             </div>
           </div>
