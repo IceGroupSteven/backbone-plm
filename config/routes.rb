@@ -2,8 +2,9 @@ BackbonePlm::Application.routes.draw do
   root to: 'users#new'
 
   resources :sessions
-  resources :users
-
+  resources :users do
+    get :questionnaire
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

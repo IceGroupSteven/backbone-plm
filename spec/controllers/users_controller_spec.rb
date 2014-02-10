@@ -3,47 +3,56 @@ require 'spec_helper'
 describe UsersController do
 
   describe "#new" do
-    it "should render new" do
+    it "renders the new template" do
       get :new
       expect(response).to render_template(:new)
     end
 
-    it "should assign new user to @user" do
+    it "assigns new user to @user" do
       get :new
       expect(assigns[:user]).to be_an_instance_of(User)
     end
   end
 
   describe "#create" do
-    let(:user_attrs) { attributes_for(:user) }
+    let(:user) { mock_model(User) }
 
-    it "should render if user was not saved" do
-      user = mock_model(User)
-      User.stub(:new).and_return(user)
-      user.should_receive(:save).and_return(false)
-      post :create, user: user_attrs
-      expect(response).to render_template(partial: '_errors')
-    end
+    context "for invalid user" do
 
-    context "successful user creation" do
-      it "via AJAX should render the questionnaire partial" do
-        user = mock_model(User)
+      it "renders the new template" do
         User.stub(:new).and_return(user)
-        user.should_receive(:save).and_return(true)
-
-        xhr :post, :create, user: user_attrs
-        expect(response).to render_template(partial: '_questionnaire')
+        user.should_receive(:save).and_return(false)
+        post :create, user: attributes_for(:user)
+        expect(response).to render_template(:new)
       end
 
-      it "via ActionDispatch should redirect to the new user view" do
-        user = mock_model(User)
-        User.stub(:new).and_return(user)
-        user.should_receive(:save).and_return(true)
+      it "displays validation errors on the user" do
+        post :create, user: attributes_for(:invalid_user)
+        expect(response).to render_template(:new)
+      end
+    end
 
-        post :create, user: user_attrs
-        expect(response).to redirect_to user_path(user)
+    it "redirects to the questionnaire page if the user was persisted" do
+      User.stub(:new).and_return(user)
+      user.should_receive(:save).and_return(true)
+
+      post :create, user: attributes_for(:user)
+      expect(response).to redirect_to user_questionnaire_path(user)
+    end
+
+    context "existing user that failed to complete the questionnaire" do
+      it "is routed to the questionnaire upon next login attempt" do
+        pending "Maybe use a wizard form for this..."
       end
     end
   end
 
+  describe "#questionnaire" do
+    let(:user) { create(:user) }
+
+    it "renders the questionnaire template" do
+      get :questionnaire, user_id: user.id
+      expect(response).to render_template(:questionnaire)
+    end
+  end
 end

@@ -27,7 +27,6 @@ feature "User authentication" do
       fill_in 'user[password_confirmation]', with: "password123"
     end
     click_button 'SIGN UP'
-    expect(page).to have_content(/Welcome to BPLM/)
-    expect(page).to have_content 'Matt Campbell'
+    expect(page).to have_content(/Tell us a little more/)
   end
 end
