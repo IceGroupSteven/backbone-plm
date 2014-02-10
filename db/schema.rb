@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210011822) do
+ActiveRecord::Schema.define(version: 20140210144420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20140210011822) do
     t.datetime "updated_at"
   end
 
+  create_table "company_divisions", force: true do |t|
+    t.integer  "company_id"
+    t.integer  "division_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "company_divisions", ["company_id", "division_id"], name: "by_company_and_division", unique: true, using: :btree
+
   create_table "divisions", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -43,6 +52,9 @@ ActiveRecord::Schema.define(version: 20140210011822) do
     t.boolean  "admin"
     t.string   "password_digest"
     t.string   "company"
+    t.integer  "company_id"
   end
+
+  add_index "users", ["company_id"], name: "index_users_on_company_id", using: :btree
 
 end

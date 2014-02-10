@@ -3,9 +3,27 @@ require 'spec_helper'
 describe User do
   let(:user)    { build(:user) }
   let(:admin)   { build(:admin) }
-  let(:invalid) { build(:user, :email => nil) }
+  let(:invalid) { build(:no_email_user) }
 
-  context 'validations' do
+  context "associations" do
+    let(:company)   { mock_model(Company) }
+    let(:division)  { mock_model(Division) }
+
+    it "belongs to a company" do
+      user.company = company
+      expect(user).to respond_to :company
+      expect(user.company).to be company
+    end
+
+    it "has many divisions through its company" do
+      user.company = create(:company)
+      user.company.divisions.create(attributes_for :knits)
+      expect(user.company).to respond_to :divisions
+      expect(user.company.divisions.size).to eq 1
+    end
+  end
+
+  context "validations" do
     it "should be valid with an email address" do
       expect(user).to be_valid
       expect(admin).to be_valid
@@ -25,8 +43,8 @@ describe User do
     end
   end
 
-  context 'instance methods' do
-    it '#full_name' do |s|
+  context "#full_name" do
+    it "returns a user object's full name" do
       expect(user.full_name).to eq "John Doe"
     end
   end
