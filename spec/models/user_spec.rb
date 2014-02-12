@@ -19,7 +19,7 @@ describe User do
       user.company = create(:company)
       user.company.divisions.create(attributes_for :knits)
       expect(user.company).to respond_to :divisions
-      expect(user.company.divisions.size).to eq 1
+      expect(user.divisions.size).to eq 1
     end
   end
 
