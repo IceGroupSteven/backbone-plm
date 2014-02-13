@@ -46,15 +46,21 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 group :test, :development do
   gem "rspec-rails"
-  gem "capybara"
-  gem "selenium-webdriver"
   gem "better_errors"
   gem "binding_of_caller"
   gem "terminal-notifier-guard"
   gem "factory_girl_rails"
   gem "simplecov"
-  gem "database_cleaner"
   gem "guard", ">=2.1.0"
   gem "guard-rspec"
+  gem "growl_notify"
+end
+
+group :test do
+  gem "capybara"
+  gem "faker"
+  gem "database_cleaner"
   gem "launchy"
+  gem "selenium-webdriver"
+  gem "shoulda-matchers"
 end

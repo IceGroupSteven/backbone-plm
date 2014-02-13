@@ -42,20 +42,37 @@ body {
   font-family: 'Open Sans';
 }
 
-.col-centered {
-    float: none;
-    margin: 0 auto;
+/* Custom container */
+.container-full {
+  width: 100%;
+  margin: 0 auto;
 }
 
-.container-full {
+@media only screen and (max-width: 768px) {
+  .margin-responsive {
+    margin: 0 30px;
+  }
+}
+
+.col-centered {
+  float: none;
   margin: 0 auto;
-  width: 100%;
+}
+
+.bg-blue {
+  padding: 10px 8px;
+  background-color: #64a9d2;
+}
+
+.bg-pattern {
+  background-image:url('/assets/background.png');
+  background-repeat: repeat;
 }
 
 /* Home Page */
 
 .logo-header {
-  padding-bottom: 15px;
+  padding: 0 0 15px 15px;
 }
 
 .register-form-signup h1 {
@@ -73,16 +90,6 @@ body {
   line-height: 0;
   letter-spacing: 1px;
   padding-bottom: 20px;
-}
-
-.sign-up {
-  padding: 10px 8px;
-  background-color: #64a9d2;
-}
-
-.sign-up-bg {
-  background-image:url('/assets/background.png');
-  background-repeat: repeat;
 }
 
 /* Form Styles */

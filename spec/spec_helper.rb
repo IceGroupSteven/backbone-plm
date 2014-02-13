@@ -16,6 +16,12 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
+  # Only runs tests tagged as 'focus'
+  # c.filter_run focus: true
+
+  # Skips tests tagged as slow
+  # c.filter_run_excluding slow: true
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
