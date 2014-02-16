@@ -53,7 +53,6 @@ group :test, :development do
   gem "simplecov"
   gem "guard", ">=2.1.0"
   gem "guard-rspec"
-  gem "growl_notify"
 end
 
 group :test do
