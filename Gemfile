@@ -53,6 +53,7 @@ group :test, :development do
   gem "terminal-notifier-guard"
   gem "factory_girl_rails"
   gem "simplecov"
+  gem "awesome_print"
   gem "guard", ">=2.1.0"
   gem "guard-rspec"
 end

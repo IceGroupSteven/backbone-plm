@@ -16,11 +16,11 @@
   font-family: 'Nexa Bold';
   font-style: normal;
   font-weight: normal;
-  src: url('nexabold.otf') format('otf'),
-       url('nexabold.woff') format('woff'), 
-       url('nexabold.ttf')  format('truetype'),
-       url('nexabold.svg') format('svg'),
-       url('nexabold.eot') format('eot');
+  src: url(<%= asset_path 'nexabold.otf' %>) format('otf'),
+       url(<%= asset_path 'nexabold.woff' %>) format('woff'), 
+       url(<%= asset_path 'nexabold.ttf' %>)  format('truetype'),
+       url(<%= asset_path 'nexabold.svg' %>) format('svg'),
+       url(<%= asset_path 'nexabold.eot' %>) format('eot');
 }
 @font-face {
   font-family: 'Nexa Light';
@@ -65,7 +65,7 @@ body {
 }
 
 .bg-pattern {
-  background-image:url('/assets/background.png');
+  background-image:url('/assets/images/background.png');
   background-repeat: repeat;
 }
 
