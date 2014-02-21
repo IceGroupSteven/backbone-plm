@@ -17,3 +17,6 @@
 
 # Ignore the simplecov directory
 /coverage
+
+# Let's keep our passwords and such out of version control...
+/config/application.yml

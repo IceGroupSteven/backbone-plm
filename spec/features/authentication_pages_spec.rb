@@ -17,7 +17,7 @@ feature "User authentication" do
     expect(page).to have_content(/Email can't be blank Password can't be blank/)
   end
 
-  scenario "adds a new user", js: true do
+  scenario "adds a new user" do
     visit root_path
     within(:css, ".new_user") do
       fill_in 'user[first_name]', with: "Matt"

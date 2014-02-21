@@ -1,8 +1,13 @@
 language: ruby
 rvm:
-  - "2.0.0"
-
+  - 2.0.0
 before_script:
   - psql -c 'create database bplm_test;' -U postgres
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: Yly7IV/f0TvrBMrxJdFNtO7gaKAjS+dg/JIZEDvHK+yxUI4jpVYDGv0V30M2uas1sGpi5rbR9wpQPbmM/hjfyAs9h1MRVFBYIY7aluAkFZ/59XfRXE9PbjdHB5pEiFvUznJXRlQY669P6jxksfNbyJfpVa7vEaWPKeR1t4jeiXQ=
+  app: 
+    master: bplm-staging
+  on:
+    repo: mecampbellsoup/backbone-plm
