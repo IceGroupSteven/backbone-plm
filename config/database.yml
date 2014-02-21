@@ -15,7 +15,3 @@ development:
 
 test:
   <<: *defaults
-
-production:
-  <<: *defaults
-  # TODO: Add erb-echo of credentials
