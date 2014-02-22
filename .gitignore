@@ -20,3 +20,6 @@
 
 # Let's keep our passwords and such out of version control...
 /config/application.yml
+
+# Ignore precompiled assets if they exist
+/public/assets

@@ -4,33 +4,33 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+  src: local('Open Sans Light'), local('OpenSans-Light'), font-url('DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff') format('woff');
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+  src: local('Open Sans'), local('OpenSans'), font-url('cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
 }
 @font-face {
   font-family: 'Nexa Bold';
   font-style: normal;
   font-weight: normal;
-  src: url(<%= asset_path 'nexabold.otf' %>) format('otf'),
-       url(<%= asset_path 'nexabold.woff' %>) format('woff'), 
-       url(<%= asset_path 'nexabold.ttf' %>)  format('truetype'),
-       url(<%= asset_path 'nexabold.svg' %>) format('svg'),
-       url(<%= asset_path 'nexabold.eot' %>) format('eot');
+  src: font-url('nexabold.otf') format('otf'),
+       font-url('nexabold.woff') format('woff'), 
+       font-url('nexabold.ttf') format('truetype'),
+       font-url('nexabold.svg') format('svg'),
+       font-url('nexabold.eot') format('eot');
 }
 @font-face {
   font-family: 'Nexa Light';
   font-style: normal;
   font-weight: normal;
-  src: url('nexalight.otf') format('otf'),
-       url('nexalight.woff') format('woff'), 
-       url('nexalight.ttf')  format('truetype'),
-       url('nexalight.svg') format('svg'),
-       url('nexabold.eot') format('eot');
+  src: font-url('nexalight.otf') format('otf'),
+     font-url('nexalight.woff') format('woff'), 
+     font-url('nexalight.ttf') format('truetype'),
+     font-url('nexalight.svg') format('svg'),
+     font-url('nexalight.eot') format('eot');
 }
 
 /* General */
@@ -65,7 +65,7 @@ body {
 }
 
 .bg-pattern {
-  background-image:url('/assets/images/background.png');
+  background-image: image-url('background.png');
   background-repeat: repeat;
 }
 
