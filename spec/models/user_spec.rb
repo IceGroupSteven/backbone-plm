@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe User do
   let(:user)    { build(:user) }
-  let(:admin)   { build(:admin) }
 
   describe "initializes users with unique email" do
     it { should have_secure_password }
