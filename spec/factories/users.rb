@@ -10,8 +10,8 @@ FactoryGirl.define do
     password_confirmation "testing123"
     admin                  false
 
-    factory :admin do
-      admin                  true
+    trait :admin do
+      admin true
     end
   end
 end
