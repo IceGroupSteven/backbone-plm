@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe UsersController do
-
   describe "#new" do
     it "should render new" do
       get :new
