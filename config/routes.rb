@@ -1,9 +1,9 @@
 BackbonePlm::Application.routes.draw do
   root to: 'sessions#new'
 
-  get '/sessions/new' => 'sessions#new', as: 'new_session'
-  post '/sessions/new' => 'sessions#create', as: 'sessions'
-  delete '/sessions/new' => 'sessions#destroy'
+  get '/sessions/new' => 'sessions#new', as: 'login'
+  post '/sessions' => 'sessions#create', as: 'sessions'
+  delete '/sessions/:id' => 'sessions#destroy'
 
   resources :users
 

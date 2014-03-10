@@ -3,7 +3,7 @@ require "spec_helper"
 describe ApplicationController do
   controller do
     def index
-      redirect_to "/login"
+      redirect_to "/welcome"
     end
   end
 
@@ -22,7 +22,7 @@ describe ApplicationController do
     it "is not triggered when there is a current user" do
       ApplicationController.any_instance.stub(:current_user).and_return(user)
       get :index
-      expect(response).to redirect_to "/login"
+      expect(response).to redirect_to "/welcome"
     end
   end
 end
