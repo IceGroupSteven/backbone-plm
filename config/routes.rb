@@ -1,6 +1,5 @@
 BackbonePlm::Application.routes.draw do
-  root to: 'users#new'
-
+  root to: 'sessions#new'
   resources :sessions
   resources :users
 

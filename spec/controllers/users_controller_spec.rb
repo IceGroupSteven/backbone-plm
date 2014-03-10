@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe UsersController do
+  before :each do
+    user = create(:user)
+    session[:user_id] = user.id
+  end
+
   describe "#new" do
     it "should render new" do
       get :new
