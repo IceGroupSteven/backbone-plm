@@ -6,23 +6,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
-
-      if request.xhr?
-        render partial: "questionnaire", object: @user, as: 'user'
-      else
-        redirect_to @user
-      end
+      redirect_to user_questionnaire_path(@user)
     else
-      # If @user is not valid, the new user form will be rendered with errors
-      render partial: "shared/errors", status: 500, object: @user, as: 'object'
+      render :new
     end
   end
 
-  def update
-    # TODO: the 2nd part of new user sign-up will effectively update our existing, basic user
-    @user = User.find_by(session[:user_id])
-    # flash[:notice] = "Thank you for signing up!"
+  def questionnaire
+    @user = User.find(params[:user_id])
   end
 
   private

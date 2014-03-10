@@ -2,52 +2,33 @@ require 'spec_helper'
 
 describe UsersController do
   before :each do
-    user = create(:user)
+    user = mock_model User
+    ApplicationController.any_instance.stub(:current_user).and_return(user)
     session[:user_id] = user.id
   end
 
   describe "#new" do
-    it "should render new" do
+    it "renders the new template" do
       get :new
       expect(response).to render_template(:new)
     end
 
-    it "should assign new user to @user" do
+    it "assigns new user to @user" do
       get :new
       expect(assigns[:user]).to be_an_instance_of(User)
     end
   end
 
   describe "#create" do
-    let(:user_attrs) { attributes_for(:user) }
+    let(:user) { mock_model(User) }
 
-    it "should render if user was not saved" do
-      user = mock_model(User)
-      User.stub(:new).and_return(user)
-      user.should_receive(:save).and_return(false)
-      post :create, user: user_attrs
-      expect(response).to render_template(partial: '_errors')
-    end
-
-    context "successful user creation" do
-      it "via AJAX should render the questionnaire partial" do
-        user = mock_model(User)
+    context "for invalid user" do
+      it "renders the new template" do
         User.stub(:new).and_return(user)
-        user.should_receive(:save).and_return(true)
-
-        xhr :post, :create, user: user_attrs
-        expect(response).to render_template(partial: '_questionnaire')
-      end
-
-      it "via ActionDispatch should redirect to the new user view" do
-        user = mock_model(User)
-        User.stub(:new).and_return(user)
-        user.should_receive(:save).and_return(true)
-
-        post :create, user: user_attrs
-        expect(response).to redirect_to user_path(user)
+        user.should_receive(:save).and_return(false)
+        post :create, user: attributes_for(:user)
+        expect(response).to render_template(:new)
       end
     end
   end
-
 end
