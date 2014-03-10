@@ -1,7 +1,10 @@
 BackbonePlm::Application.routes.draw do
-  root to: 'users#new'
+  root to: 'sessions#new'
 
-  resources :sessions
+  get '/sessions/new' => 'sessions#new', as: 'new_session'
+  post '/sessions/new' => 'sessions#create', as: 'sessions'
+  delete '/sessions/new' => 'sessions#destroy'
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

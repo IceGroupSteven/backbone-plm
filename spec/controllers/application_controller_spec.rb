@@ -16,7 +16,7 @@ describe ApplicationController do
     it "triggers a callback to the authorize method" do
       current_user = nil
       get :index
-      expect(response).to redirect_to new_session_path
+      expect(response).to redirect_to root_path
     end
 
     it "is not triggered when there is a current user" do
