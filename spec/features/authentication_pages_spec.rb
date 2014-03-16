@@ -2,10 +2,9 @@ require 'spec_helper'
 
 feature "User authentication" do
   scenario "sign-in of existing user" do
-    pending
     user = create(:user)
     sign_in(user)
-    expect(page).to have_content(/Dashboard/)
+    expect(page).to have_content(/Dashboard/i)
   end
 
   scenario "sign-in of invalid user" do

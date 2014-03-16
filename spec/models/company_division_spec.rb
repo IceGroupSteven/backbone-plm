@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe CompanyDivision do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "associations" do
+    it { should belong_to(:company) }
+    it { should belong_to(:division) }
+  end
 end

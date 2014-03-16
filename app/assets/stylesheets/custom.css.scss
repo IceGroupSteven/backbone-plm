@@ -1,45 +1,21 @@
-/* Fonts */
-/* included only when we don't want to use fonts from google server */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), font-url('DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff') format('woff');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), font-url('cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
-}
-@font-face {
-  font-family: 'Nexa Bold';
-  font-style: normal;
-  font-weight: normal;
-  src: font-url('nexabold.otf') format('otf'),
-       font-url('nexabold.woff') format('woff'), 
-       font-url('nexabold.ttf') format('truetype'),
-       font-url('nexabold.svg') format('svg'),
-       font-url('nexabold.eot') format('eot');
-}
-@font-face {
-  font-family: 'Nexa Light';
-  font-style: normal;
-  font-weight: normal;
-  src: font-url('nexalight.otf') format('otf'),
-     font-url('nexalight.woff') format('woff'), 
-     font-url('nexalight.ttf') format('truetype'),
-     font-url('nexalight.svg') format('svg'),
-     font-url('nexalight.eot') format('eot');
-}
-
 /* General */
 
 a { color:#fff; }
 a:hover {color:#fff;}
 body {
-  padding-top: 20px;
   font-family: 'Open Sans';
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+html, body {
+  height: 100%;
 }
 
 /* Custom container */
@@ -67,13 +43,10 @@ body {
 .bg-pattern {
   background-image: image-url('background.png');
   background-repeat: repeat;
+  min-height: 600px;
 }
 
 /* Home Page */
-
-.logo-header {
-  padding: 0 0 15px 15px;
-}
 
 .register-form-signup h1 {
   color: #1387c3;
@@ -104,10 +77,6 @@ body {
   margin-bottom: 8px;
 }
 
-/*.form-div {
-
-}*/
-
 .terms {
   color: #3E7095;
   font-size: 11px;
@@ -131,27 +100,45 @@ body {
 /* Navigation */
 
 .navbar-blue {
-background-color: #0278c8;
-border-color: #080808;
+  background-color: #0278c8;
+  border-color: #080808;
 }
+
 .navbar-blue .navbar-toggle .icon-bar {
-background-color: #ffffff;
+  background-color: #ffffff;
 }
+
+.navbar-font {
+  font-family: 'Synthview Bold';
+  color: #AAABAB;
+}
+
+.nav-text-padding {
+  padding-top: 5px;
+}
+
 .navbar-blue .navbar-toggle {
-border-color: #006FB9;
+  border-color: #006FB9;
 }
-.nav>li>a:hover, .nav>li>a:focus {
-color: white;
+
+.nav > li > a:hover, .nav > li> a:focus {
+  color: white;
 	background: -webkit-linear-gradient(#71cfed,#3a9cde);
-    background: -moz-linear-gradient(#71cfed,#3a9cde);  
-    background: -o-linear-gradient(#71cfed,#3a9cde);  
-    background: linear-gradient(#71cfed,#3a9cde);  
-    background-color: #71cfed;  
-    -webkit-transition: background 1s ease-out;  
-    -moz-transition: background 1s ease-out;  
-    -o-transition: background 1s ease-out;  
-    transition: background 1s ease-out;  
+  background: -moz-linear-gradient(#71cfed,#3a9cde);
+  background: -o-linear-gradient(#71cfed,#3a9cde);
+  background: linear-gradient(#71cfed,#3a9cde);
+  background-color: #71cfed;
+  -webkit-transition: background 1s ease-out;
+  -moz-transition: background 1s ease-out;
+  -o-transition: background 1s ease-out;
+  transition: background 1s ease-out;
 }
+
+.row .logo-header, img {
+  height: 50px;
+  display: inline-block;
+}
+
 * {
   -webkit-border-radius: 0 !important;
      -moz-border-radius: 0 !important;
@@ -163,4 +150,10 @@ color: white;
 .copyright {
   color: gray;
   font-size: 10px;
+}
+
+/* Dashboard */
+
+.dash-image {
+  height: 200px;
 }

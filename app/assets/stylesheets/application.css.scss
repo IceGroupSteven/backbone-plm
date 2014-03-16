@@ -10,21 +10,6 @@
  *
  *= require_self
  *= require bootstrap
+ *= require 'font'
  *= require_tree .
  */
-
- .footer {
-  position: relative;
-  height: 220px;
-  clear:both;
-  padding-top:20px;
-  text-align:center;
-  color: black;
-  a {
-    color: gray;
-  }
-  a:hover {
-    color: #efefef; 
-    text-decoration: none;
-  }
-}
