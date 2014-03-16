@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+# Use HAML
+gem 'haml'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
@@ -52,7 +55,6 @@ group :test, :development do
   gem "binding_of_caller"
   gem "terminal-notifier-guard"
   gem "factory_girl_rails"
-  gem "simplecov"
   gem "awesome_print"
   gem "guard", ">=2.1.0"
   gem "guard-rspec"
@@ -61,6 +63,7 @@ end
 group :test do
   gem "capybara"
   gem "faker"
+  gem "simplecov"
   gem "database_cleaner"
   gem "shoulda-matchers"
 end

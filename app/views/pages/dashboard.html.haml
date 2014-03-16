@@ -1,0 +1,23 @@
+%div.row.logo-header
+  %div.col-xs-6
+    = image_tag("b-crest-only.png")
+  %div.col-xs-6
+    = image_tag("concierge-avatar.png", class: "pull-right")
+    %div.pull-right.nav-text-padding
+      %div.navbar-font= @user.full_name
+      %div.navbar-font= @user.company.name
+
+%div.row.bg-pattern{ style: "padding-top: 150px;" }
+  %div.col-sm-12.margin-responsive
+    %div.row
+      %div.col-sm-6.col-centered.register-form-signup.text-center
+        %h1.uppercase Dashboard
+        %p.uppercase Click a task image to select your navigation.
+
+    %div.row
+      %div.col-sm-12.col-centered.text-center
+        = image_tag("admin.jpg", class: "dash-image")
+        = image_tag("tech.jpg", class: "dash-image")
+        = image_tag("reports.jpg", class: "dash-image")
+        = image_tag("search.jpg", class: "dash-image")
+        = image_tag("cal.jpg", class: "dash-image")
